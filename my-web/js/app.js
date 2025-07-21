@@ -13,11 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       console.log(data);
       try {
-        const res = await fetch('https://backend-747060403741.us-central1.run.app', {
+        const res = await fetch('https://backend-747060403741.us-central1.run.app/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
+        console.log(res);
         const result = await res.json();
         if (!res.ok) throw new Error(result.error || 'Signup failed');
         signupMessage.style.color = 'green';

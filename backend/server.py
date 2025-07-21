@@ -4,14 +4,14 @@ from google.cloud import firestore
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "https://storage.googleapis.com"}})
 
 db = firestore.Client()
 collection = db.collection('signups')
 
 @app.route('/api/test', methods=['GET'])
 def test():
-    return ":)", 500
+    return ":)", 200
 
 @app.route('/api/subscribe', methods=['POST'])
 def subscribe():
