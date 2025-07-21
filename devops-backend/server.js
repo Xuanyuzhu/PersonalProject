@@ -7,15 +7,15 @@ const app     = express();
 
 app.use(express.json());
 
-// —— 新增：把 my-web 文件夹当作静态资源目录 —— 
+// put my-web
 app.use(express.static(path.join(__dirname, '../my-web')));
 
-// —— 可选：明确定义根路由返回 index.html —— 
+// select front end
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../my-web/index.html'));
 });
 
-// 测试路由
+// test
 app.get('/test-db', async (req, res) => {
   try {
     const [rows] = await pool.query('SELECT NOW() AS now');

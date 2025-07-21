@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./devops-backend
+    container_name: devops-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build: ./my-web
+    container_name: my-web
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
