@@ -10,9 +10,10 @@ services:
       - NODE_ENV=production
 
   frontend:
-    build: ./my-web
-    container_name: my-web
+    build:
+      context: ./my-web
+      dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "3000:80"
     depends_on:
       - backend
