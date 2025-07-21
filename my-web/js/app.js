@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         name:  e.target.name.value.trim(),
         email: e.target.email.value.trim()
       };
+      console.log(data);
       try {
-        const res    = await fetch('/api/subscribe', {
+        const res = await fetch('http://localhost:5000/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -42,7 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
         password: e.target.password.value
       };
       try {
-        const res    = await fetch('/api/auth/login', {
+        // const res    = await fetch('/api/auth/login', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(data)
+        // });
+        const res = await fetch('http://localhost:5000/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
