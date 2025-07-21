@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOpsInfo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <div class="logo">Group6 Lab</div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">What Is DevOps?</a>
+        <a href="#">Culture & Practices</a>
+        <a href="#">Recommended Toolchain</a>
+        <a href="#">Case Studies</a>
+        <a href="#">About Us</a>
+      </nav>
+    </div>
+    <div class="socials">
+      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f426.png" alt="Twitter" />
+      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png" alt="Globe" />
+      <!-- ... 可替换为真实图标 -->
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Discover the World of DevOps<br />From Today</h1>
+        <p>DevOps is a culture, set of practices, and toolchain that unites Development and Operations to enable
+          continuous delivery, streamlined collaboration, and rapid innovation.</p>
+        <a href="#" class="btn btn-primary">WORK WITH US</a>
+        <a href="#" class="btn btn-secondary">LEARN MORE</a>
+      </div>
+      <div class="hero-image">
+        <img src="./images/DevOpsIcon.png" alt="DevOpsIcon" />
+      </div>
+    </section>
+
+    <!-- Sign-Up Section -->
+    <section class="signup">
+      <div class="signup-container">
+        <h2>Sign Up for DevOps Updates</h2>
+        <form id="signupForm" class="signup-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <button type="submit">Sign Up</button>
+        </form>
+        <p id="signupMessage"></p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <h2>Our DevOps Solutions</h2>
+      <p>What We Do</p>
+      <div class="card-container">
+        <div class="card">
+          <img src="./images/toolIcon.png" alt="Toolchain" />
+          <h3>Our Toolchain & Expertise</h3>
+          <p>A curated selection of best-in-class tools covering source control, CI/CD pipelines, infrastructure as
+            code, container orchestration, monitoring, and security — everything your team needs to automate, deploy,
+            and operate applications reliably.</p>
+        </div>
+        <div class="card">
+          <img src="./images/caseStudyIcon.png" alt="caseStudyIcon" />
+          <h3>Case Studies</h3>
+          <p>Real-world stories from companies like Netflix, Airbnb, and Alibaba, showing how they’ve implemented DevOps
+            practices at scale to accelerate delivery, improve system resilience, and drive continuous innovation.
+
+          </p>
+        </div>
+        <div class="card">
+          <img src="./images/ResourceIcon.png" alt="ResourceIcon" />
+          <h3>Resources</h3>
+          <p>A handpicked list of learning materials — official docs, essential books like The Phoenix Project and
+            Accelerate, and practical online courses on platforms such as Coursera and Udemy — to help you master DevOps
+            concepts and tools.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.querySelector('.btn-secondary').addEventListener('click', e => {
+      e.preventDefault();
+      // Jump to Youru Devops page
+      window.location.href = 'https://continue.yorku.ca/programs/certificate-in-devops/';
+    });
+  </script>
+  <script src="js/app.js" defer></script>
+</body>
+
+</html>
