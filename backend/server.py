@@ -1,20 +1,34 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from google.cloud import firestore
+from config import get_secret
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://storage.googleapis.com"}})
+API_KEY = get_secret("flask-api-key")
+CORS(app, resources={r"/api/*": {
+    "origins": "https://34.54.220.184.sslip.io",
+    "methods": ["GET", "POST", "OPTIONS"],
+    "allow_headers": ["Content-Type"]
+}})
+
 
 db = firestore.Client()
 collection = db.collection('signups')
+
+@app.route("/api/secret", methods=["GET"])
+def secret():
+    return f"Secret is: {API_KEY}", 200
 
 @app.route('/api/test', methods=['GET'])
 def test():
     return ":)", 200
 
-@app.route('/api/subscribe', methods=['POST'])
+@app.route("/api/subscribe", methods=["POST", "OPTIONS"])
 def subscribe():
+    if request.method == "OPTIONS":
+        return '', 204  # CORS preflight response
+
     try:
         data = request.get_json()
         name = data.get('name', '').strip()
@@ -33,6 +47,7 @@ def subscribe():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))

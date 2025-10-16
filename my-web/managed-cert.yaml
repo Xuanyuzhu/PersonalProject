@@ -1,0 +1,7 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: hello-app-cert
+spec:
+  domains:
+    - 34.54.220.184.sslip.io
